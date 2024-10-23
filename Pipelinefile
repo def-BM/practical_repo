@@ -1,0 +1,34 @@
+pipeline {
+    agent any // This specifies that the pipeline can run on any available agent.
+
+    stages {
+        stage('Build') {
+            steps {
+                // Simulate building the project
+                sh 'echo "Building the project..."'
+                // Add your build commands here, e.g., mvn clean install or npm install
+            }
+        }
+        stage('Test') {
+            steps {
+                // Simulate running tests
+                sh 'echo "Running tests..."'
+                // Add your test commands here, e.g., mvn test or npm test
+            }
+        }
+        stage('Deploy') {
+            steps {
+                // Simulate deployment
+                sh 'echo "Deploying the project..."'
+                // Add your deployment commands here
+            }
+        }
+    }
+
+    post {
+        always {
+            // This section runs after every build, regardless of the result
+            echo 'Pipeline finished.'
+        }
+    }
+}
